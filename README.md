@@ -15,16 +15,16 @@ Official implementation of **["Video Prediction Policy 2: Predict Better, Act Be
 
 - **[2026-10-08]** 🥇 **VPP2 ranks #1 overall on the official [RoboDojo-Sim leaderboard](https://robodojo-benchmark.com/leaderboard)**, achieving state-of-the-art performance across agent and non-agent tracks with **39.26 Score** and **32.26% SR**.
 
-## What is VPP2?
+## Overview
 
-VPP2 couples a pretrained video model with an action expert to learn robot control
-from visual observations, language instructions, and robot state. This repository
-provides training, inference, and evaluation code for **RoboDojo** and **LIBERO**,
-including **LIBERO-OOD** and **LIBERO-PRO**.
+We introduce **Video Prediction Policy 2 (VPP2)**, a world-action model (WAM) with
+strong zero-shot generalization in both video prediction and action generation.
 
-- **Video and action modeling.** Build robot policies on top of a pretrained Wan2.1 video backbone.
-- **Training and deployment.** Prepare data, train policies, export checkpoints, and run closed-loop evaluation.
-- **Benchmark-specific recipes.** RoboDojo and LIBERO use their own configurations, model settings, and data processing.
+Our pipeline has three stages:
+
+1. **Event-level video pretraining.** Continue pretraining the base video model on a large, diverse dataset of manipulation videos with detailed captions to improve generalization across open-ended tasks.
+2. **Single-step visual planning.** Post-train and distill the video model into a single-step visual planner with a fixed prediction horizon.
+3. **Action learning.** Add an action module through a mixture-of-transformers (MoT) architecture to learn an implicit inverse dynamics model.
 
 <p align="center">
   <a href="assets/teaser.png"><img src="assets/teaser.png" alt="VPP2 paper overview: event-level video prediction, instruction following, and robot policy learning." width="100%"></a>
