@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+.venv/
+weights/
+data/
+runs/
+*.pt
+*.pth
+*.safetensors
+*.mp4
+*.parquet
+*.npz
+.env
+configs/local.*
+configs/robodojo/local.*
+configs/libero/local.*
+
+# Internal development artifacts live outside the release repository.
+/results/
+/tests/
+/tools/

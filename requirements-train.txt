@@ -1,0 +1,3 @@
+# Training adds DeepSpeed to the runtime dependencies.
+-r requirements.txt
+deepspeed==0.18.5
