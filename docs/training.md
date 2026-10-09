@@ -16,15 +16,46 @@ The release provides RoboDojo history-conditioned Video-10k.
 Start joint + Action2B directly from Video-10k;
 [download it and follow the integrated scripts](robodojo.md) for one continuous
 0–100k run. The robot-video pretrained backbone checkpoint is on the
-[TODO list](../README.md#todo). Converted training data remains a separate release item.
+[TODO list](../README.md#todo). The converter below builds the training data from the public RoboDojo export.
 
-The data contract is the converted EE16 data, not arbitrary raw RoboDojo recordings.
+The converter accepts the official, shift-fixed **EE16 LeRobot v3.0** export.
+Joint14, LeRobot v2.1 and raw XPolicyLab HDF5 are not inputs to this recipe.
 Parquet columns: `action`, `observation.state` (both `[T,16]`), `frame_index`,
 `raw_frame_index` (both identity native frame indices). Videos are RGB 480×880
 T-shaped composites at 25 Hz. Metadata has `episode_index`, `task_name`, `dimension`,
 `video_path`, `parquet_path`, `fps`, `trim_start`, `trim_end`, and `training_prompt`.
 `training_prompt` already contains the complete video instruction template.
 The EE16 coordinate frame and quaternion order must match the supplied data.
+
+## Convert the public dataset
+
+Install `ffmpeg` with `libx264` support and download the
+[official EE16 dataset](https://huggingface.co/datasets/RoboDojo-Benchmark/RoboDojo/tree/main/data/RoboDojo_ee_lerobot_v30_video):
+
+```bash
+hf download RoboDojo-Benchmark/RoboDojo --repo-type dataset \
+  --include 'data/RoboDojo_ee_lerobot_v30_video/**' --local-dir /data/robodojo_download
+bash scripts/robodojo/convert.sh \
+  --source /data/robodojo_download/data/RoboDojo_ee_lerobot_v30_video \
+  --output /data/robodojo --workers 4
+```
+
+This CPU converter uses each episode's Parquet row bounds and each camera's own
+file and timestamps. It preserves the absolute EE16 state/action values,
+quaternion order and native frame indices without another action shift. The
+source must contain 3500 episodes / 1,856,102 frames at 25 Hz. Task names and
+prompts come from [`source_tasks.csv`](../configs/robodojo/source_tasks.csv).
+
+The output is one Parquet and one RGB MP4 per episode, plus
+`full_episode_metadata.csv`. Composition follows the training export: a 640×480
+head view on the left, two 240×240 wrist views stacked on the right. Wrist views
+are center-cropped to 4:3 before resizing. Each camera is trimmed independently;
+if its final frame is absent, that episode's final valid frame is repeated once.
+Training subsequently resizes the 880×480 composite directly to 416×240.
+
+Use a fresh output directory. `--limit 2` runs a small conversion smoke test;
+such a subset cannot pass the full training split check. Metadata is written
+only after all selected episodes succeed. No normalization statistics are refit.
 
 ## Prepare
 

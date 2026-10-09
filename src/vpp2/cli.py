@@ -262,6 +262,12 @@ def main():
         p.add_argument("--" + name, required=True)
     p.add_argument("--stats", default="configs/robodojo/normalization_ee16.json")
     p.add_argument("--holdout", default="configs/robodojo/holdout.json")
+    p = sub.add_parser("convert", help="Convert official EE16 LeRobot v3 data to VPP2 episodes")
+    p.add_argument("--source", required=True)
+    p.add_argument("--output", required=True)
+    p.add_argument("--tasks", default="configs/robodojo/source_tasks.csv")
+    p.add_argument("--workers", type=int, default=4)
+    p.add_argument("--limit", type=int, help="Convert only the first N episodes for a smoke test")
     p = sub.add_parser("text-cache")
     p.add_argument("--data", required=True)
     p.add_argument("--wan", required=True)
@@ -319,7 +325,11 @@ def main():
         shutil.copytree(args.source, destination)  # refuse to overwrite another adapter
         print(destination.resolve())
         return
-    if args.command == "prepare":
+    if args.command == "convert":
+        from .convert_robodojo import convert
+
+        result = convert(args.source, args.output, args.tasks, args.workers, args.limit)
+    elif args.command == "prepare":
         from .data import prepare
 
         result = prepare(args.metadata, args.media_root, args.stats, args.output, args.holdout)

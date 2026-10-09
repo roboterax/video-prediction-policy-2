@@ -17,6 +17,7 @@ Set `PYTHON_BIN` when the policy interpreter is not the current `python`.
 
 | Script | Operation |
 |---|---|
+| `scripts/robodojo/convert.sh` | Convert the public EE16 LeRobot v3 export to native-frame episodes |
 | `scripts/robodojo/prepare.sh` | Validate converted EE16 data, fixed split and critical sampling index |
 | `scripts/robodojo/text_cache.sh` | Cache language embeddings |
 | `scripts/robodojo/init_action.sh` | Initialize the fresh Action2B expert |
@@ -142,8 +143,8 @@ Then set the encoder path:
 export VPP2_WAN_ROOT="$PWD/weights/checkpoints/Wan2.1-I2V-14B-480P"
 ```
 
-Converted 3500-episode training data is a separate artifact; its download link is
-pending.
+Build the 3500-episode training data from the public
+[EE16 LeRobot v3 export](training.md#convert-the-public-dataset) with the converter below.
 
 ## 2. Prepare data and initialization
 
@@ -153,10 +154,12 @@ EE16: `[xyz, qwxyz, gripper] × 2`. Use the supplied z-score statistics for all 
 channels, including grippers. Set paths in your shell:
 
 ```bash
+export VPP2_SOURCE=/data/robodojo_download/data/RoboDojo_ee_lerobot_v30_video
 export VPP2_MEDIA_ROOT=/data/robodojo
 export VPP2_PREPARED="$PWD/data/robodojo"
 export VPP2_VIDEO_INIT="$PWD/weights/checkpoints/initialization/robodojo_his10k.pt"
 export VPP2_ACTION_INIT="$PWD/weights/init/action2b_from_his10k.pt"
+bash scripts/robodojo/convert.sh --source "$VPP2_SOURCE" --output "$VPP2_MEDIA_ROOT" --workers 4
 bash scripts/robodojo/prepare.sh \
   --metadata "$VPP2_MEDIA_ROOT/full_episode_metadata.csv" \
   --media-root "$VPP2_MEDIA_ROOT" --output "$VPP2_PREPARED"
@@ -169,9 +172,9 @@ COMMON_ARGS=(
 )
 ```
 
-`prepare` retains 3466 training and 34 held-out episodes. It does not convert raw
-RoboDojo recordings. Text caching uses a GPU; inspect live GPU processes and tmux
-before launching it. Initialization is a large CPU operation.
+`convert` builds the episode files; `prepare` retains 3466 training and 34 held-out
+episodes and builds the critical sampling index. Text caching uses a GPU; inspect
+live GPU processes and tmux before launching it. Initialization is a large CPU operation.
 
 ## 3. Train joint 0–100k
 
