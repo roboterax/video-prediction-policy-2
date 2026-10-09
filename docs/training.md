@@ -30,16 +30,18 @@ The EE16 coordinate frame and quaternion order must match the supplied data.
 ## Convert the public dataset
 
 Install `ffmpeg` with `libx264` support and download the
-[official EE16 dataset](https://huggingface.co/datasets/RoboDojo-Benchmark/RoboDojo/tree/main/data/RoboDojo_ee_lerobot_v30_video):
+[official EE16 dataset](https://huggingface.co/datasets/RoboDojo-Benchmark/RoboDojo/tree/cefcfbbf2497103fe46b99039dbd381976fe4a42/data/RoboDojo_ee_lerobot_v30_video):
 
 ```bash
 hf download RoboDojo-Benchmark/RoboDojo --repo-type dataset \
+  --revision cefcfbbf2497103fe46b99039dbd381976fe4a42 \
   --include 'data/RoboDojo_ee_lerobot_v30_video/**' --local-dir /data/robodojo_download
 bash scripts/robodojo/convert.sh \
   --source /data/robodojo_download/data/RoboDojo_ee_lerobot_v30_video \
   --output /data/robodojo --workers 4
 ```
 
+Keep the pinned download revision: later upstream releases changed task instructions.
 This CPU converter uses each episode's Parquet row bounds and each camera's own
 file and timestamps. It preserves the absolute EE16 state/action values,
 quaternion order and native frame indices without another action shift. The
