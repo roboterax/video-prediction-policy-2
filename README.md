@@ -13,6 +13,8 @@ Official implementation of **["Video Prediction Policy 2: Predict Better, Act Be
 
 ## News
 
+- **[2026-10-10]** 🎬 **VPP2 video model weights are now available!** Download the **Stage-1 (49 frames)** and **Stage-2 (17 frames)** checkpoints on [Hugging Face](https://huggingface.co/Haodong082399/VPP2/tree/main/checkpoints_video), and get started with our [zero-shot video prediction guide](docs/video_prediction.md).
+
 - **[2026-10-08]** 🥇 **VPP2 ranks #1 overall on the official [RoboDojo-Sim leaderboard](https://robodojo-benchmark.com/leaderboard)**, achieving state-of-the-art performance across agent and non-agent tracks with **39.26 Score** and **32.26% SR**.
 
 ## Overview
