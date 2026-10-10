@@ -19,6 +19,24 @@ checkpoint and a Wan model directory containing the shared VAE, CLIP, UMT5, and
 tokenizer assets. Run the commands below from the repository root. Use
 `PYTHON_BIN=/path/to/python` before the launcher command to select an environment.
 
+## Download from ModelScope
+
+The Stage-1 (49 frames) and Stage-2 (17 frames) video checkpoints are also available
+in [ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview/files).
+Use a ModelScope account with access to the repository and download the checkpoints
+and shared Wan encoders:
+
+```bash
+modelscope download --model haodong123/VPP2_preview \
+  --local_dir weights \
+  --include 'checkpoints_video/*' 'checkpoints/Wan2.1-I2V-14B-480P/**'
+```
+
+For the example below, set `--checkpoint` to
+`weights/checkpoints_video/vpp2-video-stage1-49f.pth` and `--wan-model-dir` to
+`weights/checkpoints/Wan2.1-I2V-14B-480P`. To use Stage-2, select
+`weights/checkpoints_video/vpp2-video-stage2-17f.pth` and `--num-frames 17`.
+
 ## Quick start: run a supplied example
 
 The supplied images and instructions are ready for inference. Start with the first
