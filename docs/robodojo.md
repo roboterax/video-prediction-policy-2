@@ -85,6 +85,7 @@ Download the complete bundle and shared encoders with Hugging Face
 
 ```bash
 hf download Haodong082399/VPP2 --local-dir weights/robodojo_release \
+  --include 'config.json' \
   --include 'checkpoints/joint2b_s100000/**' \
   --include 'checkpoints/Wan2.1-I2V-14B-480P/**'
 ```
@@ -126,7 +127,9 @@ For training, download Video-10k together with the shared Wan encoders:
 
 ```bash
 hf download Haodong082399/VPP2 --local-dir weights \
-  --include 'checkpoints/initialization/**' --include 'checkpoints/Wan2.1-I2V-14B-480P/**'
+  --include 'config.json' \
+  --include 'checkpoints/initialization/**' \
+  --include 'checkpoints/Wan2.1-I2V-14B-480P/**'
 ```
 
 Or use ModelScope:

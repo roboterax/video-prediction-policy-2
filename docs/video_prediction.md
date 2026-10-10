@@ -19,6 +19,23 @@ checkpoint and a Wan model directory containing the shared VAE, CLIP, UMT5, and
 tokenizer assets. Run the commands below from the repository root. Use
 `PYTHON_BIN=/path/to/python` before the launcher command to select an environment.
 
+## Download from Hugging Face
+
+Install the CLI with `python -m pip install -U huggingface_hub`.
+Download Stage-1, the root release configuration and the shared Wan encoders:
+
+```bash
+hf download Haodong082399/VPP2 --local-dir weights \
+  --include 'config.json' \
+  --include 'checkpoints_video/vpp2-video-stage1-49f.pth' \
+  --include 'checkpoints/Wan2.1-I2V-14B-480P/**'
+```
+
+For Stage-2, replace `vpp2-video-stage1-49f.pth` with
+`vpp2-video-stage2-17f.pth` in the command and use `--num-frames 17` for inference.
+Keep `config.json` in the download selection; it records checkpoint paths,
+frame counts and inference defaults.
+
 ## Download from ModelScope
 
 The Stage-1 (49 frames) and Stage-2 (17 frames) video checkpoints are also available

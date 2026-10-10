@@ -86,7 +86,9 @@ Download Video-10k, Action-30k and the shared encoders with Hugging Face
 
 ```bash
 hf download Haodong082399/VPP2 --local-dir weights \
-  --include 'checkpoints/libero/**' --include 'checkpoints/Wan2.1-I2V-14B-480P/**'
+  --include 'config.json' \
+  --include 'checkpoints/libero/**' \
+  --include 'checkpoints/Wan2.1-I2V-14B-480P/**'
 ```
 
 Or use ModelScope:
