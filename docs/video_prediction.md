@@ -39,12 +39,12 @@ frame counts and inference defaults.
 ## Download from ModelScope
 
 The Stage-1 (49 frames) and Stage-2 (17 frames) video checkpoints are also available
-in [ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview/files).
+in [ModelScope](https://modelscope.cn/models/haodong123/VPP2/files).
 Use a ModelScope account with access to the repository and download the checkpoints
 and shared Wan encoders:
 
 ```bash
-modelscope download --model haodong123/VPP2_preview \
+modelscope download --model haodong123/VPP2 \
   --local_dir weights \
   --include 'checkpoints_video/*' 'checkpoints/Wan2.1-I2V-14B-480P/**'
 ```

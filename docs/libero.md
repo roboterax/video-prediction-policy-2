@@ -66,13 +66,13 @@ Standard LIBERO, LIBERO-OOD and LIBERO-PRO evaluation all require the same
 **four-suite horizontal Video-10k + Action-30k** pair:
 
 The complete bundle is available on public [Hugging Face](https://huggingface.co/Haodong082399/VPP2)
-and [ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview).
+and [ModelScope](https://modelscope.cn/models/haodong123/VPP2).
 
 | Required artifact | Local path | Release availability |
 |---|---|---|
-| Video-10k | `weights/libero/video_step010000.pt` | [ModelScope download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/libero/video_step010000.pt) |
-| Action-30k | `weights/libero/action_step030000.pt` | [ModelScope download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/libero/action_step030000.pt) |
-| Shared VAE, CLIP, UMT5 and tokenizer | `weights/Wan2.1-I2V-14B-480P/` | [ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview), under `checkpoints/Wan2.1-I2V-14B-480P/` |
+| Video-10k | `weights/libero/video_step010000.pt` | [ModelScope download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/libero/video_step010000.pt) |
+| Action-30k | `weights/libero/action_step030000.pt` | [ModelScope download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/libero/action_step030000.pt) |
+| Shared VAE, CLIP, UMT5 and tokenizer | `weights/Wan2.1-I2V-14B-480P/` | [ModelScope](https://modelscope.cn/models/haodong123/VPP2), under `checkpoints/Wan2.1-I2V-14B-480P/` |
 | Normalization statistics | `data/libero/dataset_stats.json` | Included in [configs/libero/dataset_stats.json](../configs/libero/dataset_stats.json) |
 
 Both checkpoints are released in bf16 with the original tensor values preserved.
@@ -94,7 +94,7 @@ hf download Haodong082399/VPP2 --local-dir weights \
 Or use ModelScope:
 
 ```bash
-modelscope download --model haodong123/VPP2_preview \
+modelscope download --model haodong123/VPP2 \
   --local_dir weights \
   --include 'checkpoints/libero/**' 'checkpoints/Wan2.1-I2V-14B-480P/**'
 ```

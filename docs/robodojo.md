@@ -66,7 +66,7 @@ hosts need `tmux` and `ffmpeg`; remote scheduling also needs noninteractive SSH.
 
 The released weights are available on public
 [Hugging Face](https://huggingface.co/Haodong082399/VPP2) and
-[ModelScope](https://www.modelscope.cn/models/haodong123/VPP2_preview),
+[ModelScope](https://www.modelscope.cn/models/haodong123/VPP2),
 with identical checkpoint paths.
 Use a ModelScope account with access. Install the ModelScope client in a download
 environment if needed (`python -m pip install modelscope`).
@@ -93,7 +93,7 @@ hf download Haodong082399/VPP2 --local-dir weights/robodojo_release \
 Or use ModelScope:
 
 ```bash
-modelscope download --model haodong123/VPP2_preview \
+modelscope download --model haodong123/VPP2 \
   --local_dir weights/robodojo_release \
   --include 'checkpoints/joint2b_s100000/**' \
             'checkpoints/Wan2.1-I2V-14B-480P/**'
@@ -113,7 +113,7 @@ Inference bundles contain no optimizer state. Continue to
 Joint + Action2B training starts directly from **RoboDojo history-conditioned
 Video-10k**. This initializer is available on
 [Hugging Face](https://huggingface.co/Haodong082399/VPP2/tree/main/checkpoints/initialization)
-and [ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview), revision `master`.
+and [ModelScope](https://modelscope.cn/models/haodong123/VPP2), revision `master`.
 
 | Checkpoint | Path in the model repository | Local path |
 |---|---|---|
@@ -135,7 +135,7 @@ hf download Haodong082399/VPP2 --local-dir weights \
 Or use ModelScope:
 
 ```bash
-modelscope download --model haodong123/VPP2_preview \
+modelscope download --model haodong123/VPP2 \
   --local_dir weights \
   --include 'checkpoints/initialization/**' 'checkpoints/Wan2.1-I2V-14B-480P/**'
 ```

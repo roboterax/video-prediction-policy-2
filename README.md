@@ -6,14 +6,14 @@ Official implementation of **["Video Prediction Policy 2: Predict Better, Act Be
 
 [![arXiv: 2610.10270](assets/badges/arxiv.svg)](https://arxiv.org/abs/2610.10270)
 [![Project Page](assets/badges/project-page.svg)](https://robert-gyj.github.io/video-prediction-policy-2/)
-[![ModelScope — Models](assets/badges/modelscope.svg)](https://modelscope.cn/models/haodong123/VPP2_preview)
+[![ModelScope — Models](assets/badges/modelscope.svg)](https://modelscope.cn/models/haodong123/VPP2)
 [![Hugging Face — Models](assets/badges/huggingface.svg)](https://huggingface.co/Haodong082399/VPP2)
 
 </div>
 
 ## News
 
-- **[2026-10-10]** 🎬 **VPP2 video model weights are now available!** Download the **Stage-1 (49 frames)** and **Stage-2 (17 frames)** checkpoints on [Hugging Face](https://huggingface.co/Haodong082399/VPP2/tree/main/checkpoints_video) and [ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview/files), and get started with our [zero-shot video prediction guide](docs/video_prediction.md).
+- **[2026-10-10]** 🎬 **VPP2 video model weights are now available!** Download the **Stage-1 (49 frames)** and **Stage-2 (17 frames)** checkpoints on [Hugging Face](https://huggingface.co/Haodong082399/VPP2/tree/main/checkpoints_video) and [ModelScope](https://modelscope.cn/models/haodong123/VPP2/files), and get started with our [zero-shot video prediction guide](docs/video_prediction.md).
 
 - **[2026-10-08]** 🥇 **VPP2 ranks #1 overall on the official [RoboDojo-Sim leaderboard](https://robodojo-benchmark.com/leaderboard)**, achieving state-of-the-art performance across agent and non-agent tracks with **39.26 Score** and **32.26% SR**.
 
@@ -68,18 +68,18 @@ is unnecessary. For inference and data processing only, use `requirements.txt`.
 ## Model Weights
 
 Weights are available on [Hugging Face](https://huggingface.co/Haodong082399/VPP2) and
-[ModelScope](https://modelscope.cn/models/haodong123/VPP2_preview).
+[ModelScope](https://modelscope.cn/models/haodong123/VPP2).
 The Hugging Face repository is public; ModelScope requires an account with access.
 
 | Checkpoint | Use | Hugging Face | ModelScope |
 |---|---|---|---|
-| VPP2 Stage-1 Video (49 frames) | Zero-shot video prediction(Event level) | [Download](https://huggingface.co/Haodong082399/VPP2#stage-1-video) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints_video/vpp2-video-stage1-49f.pth) |
-| VPP2 Stage-2 Video (17 frames) | Zero-shot video prediction (Fixed time horizon) | [Download](https://huggingface.co/Haodong082399/VPP2#stage-2-video) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints_video/vpp2-video-stage2-17f.pth) |
-| RoboDojo history-conditioned Video-10k | Starting Video model for joint + Action2B training | [Download](https://huggingface.co/Haodong082399/VPP2#robodojo-training) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/initialization/robodojo_his10k.pt) |
-| RoboDojo joint Video-100k | Video model paired with Action2B-100k for evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#robodojo-evaluation) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/joint2b_s100000/video.pt) |
-| RoboDojo Action2B-100k | RoboDojo policy evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#robodojo-evaluation) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/joint2b_s100000/action.pt) |
-| LIBERO Video-10k | Video model for Action training and evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#libero) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/libero/video_step010000.pt) |
-| LIBERO Action-30k | LIBERO, LIBERO-OOD and LIBERO-PRO evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#libero) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2_preview/repo?Revision=master&FilePath=checkpoints/libero/action_step030000.pt) |
+| VPP2 Stage-1 Video (49 frames) | Zero-shot video prediction(Event level) | [Download](https://huggingface.co/Haodong082399/VPP2#stage-1-video) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints_video/vpp2-video-stage1-49f.pth) |
+| VPP2 Stage-2 Video (17 frames) | Zero-shot video prediction (Fixed time horizon) | [Download](https://huggingface.co/Haodong082399/VPP2#stage-2-video) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints_video/vpp2-video-stage2-17f.pth) |
+| RoboDojo history-conditioned Video-10k | Starting Video model for joint + Action2B training | [Download](https://huggingface.co/Haodong082399/VPP2#robodojo-training) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/initialization/robodojo_his10k.pt) |
+| RoboDojo joint Video-100k | Video model paired with Action2B-100k for evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#robodojo-evaluation) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/joint2b_s100000/video.pt) |
+| RoboDojo Action2B-100k | RoboDojo policy evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#robodojo-evaluation) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/joint2b_s100000/action.pt) |
+| LIBERO Video-10k | Video model for Action training and evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#libero) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/libero/video_step010000.pt) |
+| LIBERO Action-30k | LIBERO, LIBERO-OOD and LIBERO-PRO evaluation | [Download](https://huggingface.co/Haodong082399/VPP2#libero) | [Download](https://www.modelscope.cn/api/v1/models/haodong123/VPP2/repo?Revision=master&FilePath=checkpoints/libero/action_step030000.pt) |
 
 The Hugging Face download instructions include the root `config.json` with each checkpoint.
 
@@ -106,7 +106,7 @@ complete assets and normalization files:
 | Paper | [arXiv:2610.10270](https://arxiv.org/abs/2610.10270) |
 | Project page | [VPP2 Project Page](https://robert-gyj.github.io/video-prediction-policy-2/) |
 | XPolicyLab adapter | [VPP2 RoboDojo adapter PR](https://github.com/XPolicyLab/XPolicyLab/pull/150) |
-| ModelScope | [haodong123/VPP2_preview](https://modelscope.cn/models/haodong123/VPP2_preview) |
+| ModelScope | [haodong123/VPP2](https://modelscope.cn/models/haodong123/VPP2) |
 | Hugging Face | [Haodong082399/VPP2](https://huggingface.co/Haodong082399/VPP2) |
 
 ## Documentation
