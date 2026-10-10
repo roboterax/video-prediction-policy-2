@@ -1,0 +1,20 @@
+A person uses their left hand to grasp the bottle, then uses their right hand to unscrew the bottle cap and place it on the table. This is an ego-view video, and the camera remains static.@@human_hand/hand_0.png
+A person uses their left hand to grasp the door handle and open the door. This is an ego-view video, and the camera remains static.@@human_hand/hand_1.png
+A person uses their left hand to grasp the white AirPod in front of blue bottle in the right side and hold it up under the camera. This is an ego-view video, and the camera remains static.@@human_hand/hand_2.png
+A person uses their left hand to grasp the green box inside the trash bin, move it out of the trash bin, and place it beside the trash bin. This is an ego-view video, and the camera remains static.@@human_hand/hand_3.png
+A person uses their right hand to grasp the pen and their left hand to pull off the pen cap, and then place the pen cap on the table. This is an ego-view video, and the camera remains static.@@human_hand/hand_4.png
+A person uses their right hand to hold scissors and cut the white paper held in the left hand from the middle of the paper. This is an ego-view video, and the camera remains static.@@human_hand/hand_5.png
+A person uses their right hand to pick up scissors and cut the white paper held in the other hand from the middle of the paper. This is an ego-view video, and the camera remains static.@@human_hand/hand_6.png
+A person uses their right hand to press the door handle and pull the door open. This is an ego-view video, and the camera remains static.@@human_hand/hand_7.png
+A person uses their right hand to press the elevator go up button, and the button light up. This is an ego-view video, and the camera remains static.@@human_hand/hand_8.png
+A person uses their right hand to pick up the second robotic device placed in the left side, and then place it inside the blue box. This is an ego-view video, and the camera remains static.@@human_hand/hand_9.png
+A person use their left hand to pick up the cup, carry it over the counter, and place it into the sink. This is a ego-view video and the camera view keep static.@@human_hand/hand_10.png
+A person use their left hand to grasp the edge of the white pillow, move it over the cat, and gently cover the cat’s body with the pillow. This is a ego-view video and the camera view keep static.@@human_hand/hand_11.png
+A person use their right hand to hold the silver spoon, move it above iPad, and place the spoon on the iPad. This is a ego-view video and the camera view keep static.@@human_hand/hand_12.png
+A person use their left hand to reach for the sponge on the tray, and then lift it up from the tray. This is a ego-view video and the camera view keep static.@@human_hand/hand_13.png
+A person use their right hand to grasp the nozzle handle, then pull it off from the machine. This is a ego-view video and the camera view keep static.@@human_hand/hand_14.png
+A person use their right hand to grip the lid of the white jar and lift the lid off the jar opening, then place the lid on the table. This is a ego-view video and the camera view keep static.@@human_hand/hand_15.png
+A person use their right hand to grasp the trash bin lid and lift it open. This is a ego-view video and the camera view keep static.@@human_hand/hand_16.png
+A person use their right hand to grasp the pan lid, lift it upward, and place it on counter. This is a ego-view video and the camera view keep static.@@human_hand/hand_17.png
+A person use their left hand to pull the tissue out of the box, then place the tissue next to the box. This is a ego-view video and the camera view keep static.@@human_hand/hand_18.png
+A person use their right hand to grasp the edge of the transparent tape, and tear off a piece. This is a ego-view video and the camera view keep static.@@human_hand/hand_19.png

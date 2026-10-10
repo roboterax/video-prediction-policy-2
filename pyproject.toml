@@ -18,6 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+prompt = ["transformers>=4.57.1,<5"]
 train = ["deepspeed==0.18.5"]
 eval = ["opencv-python>=4.10", "msgpack>=1.0", "websockets>=12"]
 libero = ["datasets==3.6.0", "jsonlines==4.0.0", "opencv-python>=4.10", "PyYAML>=6", "filelock>=3"]
